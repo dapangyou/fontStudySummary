@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>                                                                                                      
+    <!-- 使用Cookie实现记住用户名的功能
+          具体要求： 关闭浏览器后用户input名任然存在的功能
+    -->
+    <form action="cookie.php">
+        <input type="text" name="username">
+        <input type="submit" value="提交">
+    </form>
+    <script>
+        window.onload = function() {
+             // 获取Cookie
+            var username = document.cookie;
+            console.log(username);
+        }
+        // 该demo按理说应该是好的  可是不知道为什么请求都发不出去？？？？
+    </script>
+</body>
+</html>

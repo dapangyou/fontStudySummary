@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="submit" value="提交">
+    <script>
+        document.querySelector("input").onclick = function() {
+            // console.log('测试按钮,,,');
+            // ajax异步请求
+            // 1.创建XMLHttpRequest对象
+            var xhr = new XMLHttpRequest();
+            // 2.建立连接
+            xhr.open('get', 'login.php?username=zhangsan');
+            // 3.发送数据   
+            xhr.send(null);
+            // 4.接收数据 异步的接收数据 需要一个回调函数
+            xhr.onreadystatechange = function() {
+                // console.log('已经成功的接收到了数据!!!!');
+                // TODO 回调函数还需要完成 send(null)出现了问题 需要解决
+                console.log(xhr.readyState);
+            }
+        }
+    </script>
+</body>
+
+</html>

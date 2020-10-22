@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            name: "lisi",
+            age: 100,
+            grade: 10
+        };
+        // 方式一
+        console.log(obj.name);
+        // 方式二
+        console.log(obj["name"]);
+        // 方式一明显更为简单
+        // obj.0 = 3;
+        // console.log(obj.0);
+        // 方式二可以给obj添加一个新的属性0
+        obj[1] = "test";
+        console.log(obj[1]);
+
+        // 方式二可以添加this class等关键字
+        // obj["this"] = 'haha';
+        // obj."this" = 'xixi';
+        console.log(obj.this);
+
+        obj["3"] = "hujia";
+        console.log(obj[3] == obj["3"]);
+    </script>
+</body>
+</html>

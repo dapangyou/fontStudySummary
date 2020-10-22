@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<users>
+    <user>
+        <id>1</id>
+        <username>zhangsan</username>
+        <password>123</password>
+        <age>50</age>
+    </user>
+    <user>
+        <id>2</id>
+        <username>lisi</username>
+        <password>456</password>
+        <age>60</age>
+    </user>
+</users>
+<!-- 
+    xml文件和文件的后缀无关,该XML也可以命名为user.txt文件
+    只和文件里面的内容有关
+    <?xml version="1.0" encoding="utf-8" ?>
+    一般这么声明的文件就是xml文件
+    XML是可扩展的标记语言
+    因此标签可以自定义
+ -->

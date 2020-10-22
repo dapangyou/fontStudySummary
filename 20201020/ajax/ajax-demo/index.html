@@ -9,6 +9,7 @@
 
 <body>
     <input type="submit" value="提交">
+    <span></span>
     <script>
         document.querySelector("input").onclick = function() {
             // console.log('测试按钮,,,');
@@ -23,7 +24,13 @@
             xhr.onreadystatechange = function() {
                 // console.log('已经成功的接收到了数据!!!!');
                 // TODO 回调函数还需要完成 send(null)出现了问题 需要解决
-                console.log(xhr.readyState);
+                // console.log(xhr.readyState);
+                if (xhr.readyState == 4) {
+                    console.log(xhr.status);
+                    var data = xhr.responseText;
+                    console.log(data);
+                    document.querySelector("span").innerHTML = data;
+                }
             }
         }
     </script>

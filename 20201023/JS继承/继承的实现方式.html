@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 继承的第一种方式：原型链的继承方式
+        function Teacher() {}
+        var t1 = new Teacher();
+        // 如果想要给t1添加一个方法，为了避免内存的浪费可以使用原型链继承的方式
+        Teacher.prototype.teachering = function() {
+            console.log('teachering.....');
+        }
+        t1.teachering();
+        // 这种方式存在一定的缺陷，如果该对象有很多个方法呢
+        Teacher.prototype.s1 = function() {
+            console.log('s1.....');
+        }
+        Teacher.prototype.s2 = function() {
+            console.log('s2.....');
+        }
+        Teacher.prototype.s3 = function() {
+            console.log('s3.....');
+        }
+        Teacher.prototype.s4 = function() {
+            console.log('s4.....');
+        }
+        Teacher.prototype.s5 = function() {
+                console.log('s5.....');
+            }
+            // 这样就可以看的出来 如果有很多个这样的方法，就会有很多重复的代码
+            // 这样就会有大量的代码荣誉
+            // 因此以下方式二的继承方式会更加好
+        var t2 = new Teacher();
+        console.log(t2.s2); // s2...
+        Teacher.prototype = {
+            contractor: Teacher,
+            a1: function() {
+                console.log(a1);
+            },
+            a2: function() {
+                console.log(a2);
+            },
+            a3: function() {
+                console.log(a3);
+            },
+            a4: function() {
+                console.log(a4);
+            },
+        };
+        console.log(t2.a2); //undefined
+        // 问题： 为什么不能调用a2, 为什么会是undefined???
+        // 因为t2对象是在追加原型方法之前创建的  之后再追加的方法  
+        // 创建的对象是基于之前的对象创建  因此找不到之后添加的方法 所以是undefined
+        // 解决方式是调换一下位置
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 拷贝继承的实际应用场景
+         如果是想要更改一个对象中的某个属性
+    -->
+    <script>
+        var obj1 = {
+            name: "zhangdada",
+            age: 100,
+            scores: 999
+        };
+        // var obj2 = {
+        //     name: "xiaoxuanfeng",
+        //     age: 100,
+        //     scores: 10  
+        // };
+        //如果有对象obj1 想要修改其中的一个属性 变成一个新的对象
+        var obj2 = obj1;
+        obj2.age = 1;
+        // 这样的作法会把obj1也改变了 因此是不行的
+        // 拷贝obj1的做法
+        var obj3 = {};
+        for (var key in obj1) {
+            var value = {};
+            value = obj1[key];
+            obj3[key] = value;
+        }
+        obj3.age = 200;
+        console.log(obj1, obj3);
+    </script>
+</body>
+
+</html>

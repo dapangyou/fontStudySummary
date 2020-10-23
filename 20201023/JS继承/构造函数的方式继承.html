@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Person(name, age, gender) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+        }
+
+        function Student(name, age, gender, score) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.score = score;
+        }
+
+        // 以上两个构造函数中有多个共有的属性
+        // 那么是否可以直接调用上面的方式呢
+
+        function Test(name, age, gender, score) {
+            Person(name, age, gender);
+            this.score = score;
+        }
+        var test = new Test("zhangsan", 20, 'nan', 90);
+        console.log(test); //只有score这个属性  因此可以证明上面调用的构造函数失败了
+
+        console.log(window.name); //zhangsan 
+        // 可以看出来name,age,gender都挂在了window对象上面了  因此是this的指向问题
+
+        function CallTest(name, age, gender, score) {
+            // Person(name, age, gender);
+            Person.call(this, name, age, gender);
+            this.score = score;
+        }
+        var callTest = new CallTest("zhangsan", 20, 'nan', 90);
+        console.log(callTest); //赋值成功了
+
+        // Apply的方式
+
+        function ApplyTest(name, age, gender, score) {
+            // Person(name, age, gender);
+            Person.apply(this, [name, age, gender]); //写法上有差异
+            this.score = score;
+        }
+        var applyTest = new ApplyTest("zhangsan2", 202, 'nan2', 902);
+        console.log(applyTest); //赋值成功了
+    </script>
+</body>
+
+</html>

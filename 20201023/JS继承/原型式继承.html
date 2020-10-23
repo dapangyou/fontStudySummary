@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 如果是想要创建一个连原型都没有的对象的时候
+        // 一般的业务代码不会用到这些  是需要追求代码的性能极致的时候才会用到
+        // 创建的该对象不会使用到toString()等函数
+        function Person() {}
+        var p1 = new Person();
+        var p2 = Object.create(null);
+        console.log(p1, p2);
+        //使用该方式 如果是想要一个对象继承另外一个对象
+        var parent = {
+            name: "zhangsan",
+            age: 20,
+            hobby: 'playing'
+        };
+        var child = Object.create(parent);
+        console.log(child);
+        // child的 __proto__中的对象是parent对象
+    </script>
+</body>
+
+</html>

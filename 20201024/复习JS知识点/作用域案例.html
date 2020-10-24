@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function f1() {
+            var num = 123;
+            function f2() {
+                // 链式查找 一层一层的找
+                console.log(num);
+            }
+            f2();
+        }
+        var num = 456;
+        f1();
+    </script>
+</body>
+</html>

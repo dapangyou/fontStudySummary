@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function f1() {
+  var a = (b = c = 9);
+  //   相当于是 var a=9;b=9;c=9;  这种不带var的就像当是全局变量
+  // 集体声明的形式是 var a=9,b=9,c=9  集体声明是逗号  默认自带var的
+  console.log(a);
+  console.log(b);
+  console.log(c);
+}
+f1();
+console.log(b);
+console.log(c);
+console.log(a);
+
+    </script>
+</body>
+</html>

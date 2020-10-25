@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.min.js"></script>
+</head>
+<body>
+    <a href="http://www.baidu.com" title="百度....">测试prop</a>
+
+    <div test="ceshi"></div>
+
+    <span index="001"></span>
+    <script>
+        // 1.获取固有属性prop
+        console.log($("a").prop("title"));
+        // 修改固有属性
+        console.log($("a").prop("title","修改baidu...."));
+
+        // 2.获取自定义属性attr
+        console.log($("div").attr("test"));
+        // 修改
+        console.log($("div").attr("test","ceshi123"));
+        console.log($("div").attr("test"));
+
+        // 3.使用data获取 是放在缓存中的数据
+        $("span").data("uname","andy")
+        console.log($("span").data("uname"));
+    </script>
+</body>
+</html>

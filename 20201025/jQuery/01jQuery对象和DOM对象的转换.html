@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <script src="./jquery.min.js"></script>
+    <video src="E://资料/2-1变量类型和计算一.mp4" muted></video>
+
+    <script>
+        var myVideo = document.querySelector('video');
+        // myVideo.play();
+
+        // 将jQuery对象转化成DOM对象的两种方式
+        // 方式一 
+        // $('video')[0].play();
+        // 方式二
+        $('video').get(0).play();
+    </script>
+</body>
+</html>

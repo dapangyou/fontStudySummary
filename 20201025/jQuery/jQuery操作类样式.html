@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 100px auto;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            transition: all 0.5s;
+        }
+        .current {
+            background: #000;
+            transform: rotate(360deg);
+        }
+    </style>
+    <script src="./jquery.min.js"></script>
+</head>
+<body>
+    <div class="current"></div>
+    <script>
+        // 添加class
+        // $("div").addClass("current");
+        // 移除class
+        $(function(){
+            $("div").click(function(){
+                // 添加class
+                // $("div").addClass("current");
+                  // 移除class
+            //   $("div").removeClass("current");
+            // 切换class
+            $("div").toggleClass("current");
+            })
+        })
+    </script>
+</body>
+</html>

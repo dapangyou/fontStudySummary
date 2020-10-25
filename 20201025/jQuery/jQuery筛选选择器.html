@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">/
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./jquery.min.js"></script>
+    <ul>
+        <li>测试1</li>
+        <li>测试2</li>
+        <li class="item">测试3</li>
+        <li>测试4</li>
+        <li>测试5</li>
+        <li>测试6</li>
+    </ul>
+    <div class="yeye">
+        爷爷p
+        <p class="father">
+            <div clapss="son">儿子</div>
+        </p>
+        <p>
+            测试
+        </p>
+    </div>
+ 
+    <script>
+        // $(function(){
+            // 第一个
+            // $("ul li:first").css("color","red");
+            // $("ul li:eq(2)").css("color","blue");
+            // 奇数
+         //   $("ul li:odd").css("color","red");
+            // 偶数
+        //    $("ul li:even").css("color","pink");
+        // })
+        // console.log($('.son').parent());
+            // $(".yeye").children("p").css("color","red");
+            // $(".yeye").find("div").css("color","red");
+            //除了自身元素的所有兄弟元素
+            $("ul .item").siblings("li").css("background","pink");
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var arr = [1,2,3];
+        // arr.forEach((value,index,array)=>{
+        //     console.log(value,index,array);
+        // })
+
+        var arr2 = [10,11,13,16,18];
+        var newArr = arr2.filter((value,idex,ar)=>{
+            return value> 15;
+        });
+        console.log(newArr);
+
+        // some函数  如果找到了第一个满足条件的元素 将不再寻找
+
+        var isBoolean = arr2.some((value,index,array)=>{
+            return value==16;
+        });
+        console.log(isBoolean);
+    </script>
+</body>
+</html>

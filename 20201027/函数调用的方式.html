@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 函数式调用方式 -->
+    <script>
+        function Person() {
+           this.name = name;
+        }
+
+        Person.prototype={
+            constructor: Person,
+            say:function(){
+                this.name=name;
+            }
+        }
+
+        //函数式调用方式  函数内部的window指向了this  相当于是给window追加属性name
+        Person("abc");   
+
+        var age = 22;
+        var p = {
+            name: "lisi",
+            age: 40,
+            say:function(){
+            console.log(this.age);
+         }
+        }
+
+        var f1 = p.say;
+        f1();     // 函数式调用
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fn() {
+            console.log('test...',this);
+        }
+        // 调用函数并且改变函数的this
+        var obj = {
+            name: 'andy'
+        }
+        // 改变this的指向
+        fn.call(obj);
+    </script>
+</body>
+</html>

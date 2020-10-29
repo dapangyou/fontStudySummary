@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Star(uname,age) {
+            this.uname = uname;
+            this.age = age;
+        }
+         var that;
+         Star.prototype.sing = function() {
+             console.log('this is singing.....');
+             that = this;
+         }
+         var zhangsan = new Star('zhangsan',33);
+         zhangsan.sing();
+         console.log(that === zhangsan);
+        // 原型对象中的this指向的是实例对象
+    </script>
+</body>
+</html>

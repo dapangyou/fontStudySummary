@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 闭包就是能够读取其他函数内部的变量
+        // 闭包的特点就是能够记住变量诞生的环境  子函数可以获取父函数的变量
+        // 本质上 闭包就是函数内部和函数外部链接的一个桥梁
+        var a = 123;
+        function fn1(){
+            var b = 234;
+            function fn2() {
+                console.log(b);
+            }
+            return fn2;
+        }
+        var result = fn1();
+        result();
+    </script>
+</body>
+</html>

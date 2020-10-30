@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <script>
+        //  通过闭包制作计时器
+        //需求：想要制作一个计时器
+        function a() {
+            var start = 0;
+            start ++ ;
+            return start;
+        }
+        // 按照一般的想法： 编写如上函数来实现计数器
+        // 但是上面的函数是有问题的  因为start是局部变量  根本没有办法实现计数器的功能
+        // 如果将start变量放在函数的外面去   那样就是全局变量了  外部可以修改他 而且污染环境不太好
+
+        // 为了解决以上的问题 就可以使用闭包啦
+
+        function fn() {
+            var start = 0;
+            function fn2() {
+                return start++;
+            }
+            return fn2;
+        }
+
+        var inc = fn();
+        console.log(inc());
+        console.log(inc());
+        console.log(inc());
+
+        // 用这样的方式就完美的解决了以上的问题了
+     </script>
+</body>
+</html>

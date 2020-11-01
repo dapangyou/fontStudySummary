@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 返回值
+        // var a = function(){
+        //     var name = 'zhangsan';
+        //     return function() {
+        //         return name;
+        //     }
+        // }
+        // var b = a();
+        // console.log(b());
+        // 函数赋值 将内部的函数赋值给外部的变量
+        // var fn;
+        // var fn2 = function() {
+        //     var name = "lisi";
+        //     var a = function() {
+        //         return name;
+        //     }
+        //     fn = a;
+        // }
+        // fn2();
+        // console.log(fn());
+
+         // 3.函数参数
+        //  var fn2 = function(f) {
+        //      console.log(f());
+        //  }
+
+        //  function fn() {
+        //      var name = "wangwu";
+        //      var a = function() {
+        //          return name;
+        //      }
+        //      fn2(a);
+        //  }
+
+        //  fn();
+
+        // 4.立即执行函数
+          function fn3(f) {
+            console.log(f());
+        }
+
+        (function () {
+            var name = "wangwu";
+            var a = function() {
+                return name;
+            }
+            fn3(a);
+        })();
+
+        // 5.循环赋值
+
+        function fn5() {
+            var arr = [];
+            for(var i=0;i<10;i++) {
+                (function(){
+
+                })
+            }
+        }
+        var bar = foo();
+
+        // 6.getter setter
+
+        // 7.计数器
+
+        // 迭代器
+        var arr = ['a','b','c'];
+        function setUp(arr) {
+            var i = 0;
+            return function() {
+                return arr[i++];
+            }
+        }
+        var next = setUp(arr);
+
+        // 8.区分首次
+        var firstLoad = (function(){
+            var list = [];
+            return function(id){
+                if(list.indexOf(id)>=0) {
+                    return false;
+                }else {
+                    list.push(id);
+                    return true;
+                }
+            }
+        });
+
+        // 9.缓存机制
+        function mult(){
+            var sum = 0;
+            for(var i=0;i<arguments.length;i++) {
+                sum = su, + arguments[i];
+            }
+            return sum;
+        }
+        mult(1,2,3,4,5);
+
+        
+
+
+    </script>
+</body>
+</html>

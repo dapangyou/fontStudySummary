@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.计数器
+        var start = 0;
+        function a() {
+            start ++ ;
+        }
+        a();  //以上的方式start是全局变量会被外部修改的 所以这样不好
+
+        //  使用闭包的方式来实现计数器的功能
+        function b() {
+            var index = 0;
+            function c() {
+               return index++;
+            }
+            return c;
+        }
+
+       var inc = b();
+       console.log(inc());
+       console.log(inc());
+       console.log(inc());
+
+       //2.闭包可以封装对象的私有的属性和方法
+
+       function Person(name,age) {
+           var age;
+           function setAge(n) {
+               age = n;
+           }
+           function getAge() {
+               return age;
+           }
+           return {
+               name: name,
+               setAge: setAge,
+               getAge: getAge
+           }
+       }
+
+       
+
+       var p1 = Person('test');
+       p1.setAge(19);
+       console.log(p1.getAge());
+    </script>
+</body>
+</html>

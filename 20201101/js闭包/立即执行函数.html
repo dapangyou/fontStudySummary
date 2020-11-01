@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 计数器
+        // 需求：每次调用add 都返回+1的数字
+        var a = 0;
+        function add() {
+            return ++a;
+        }
+
+        var add = (function() {
+            var count = 0;
+            return function() {
+                return ++count;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getBooks() {
+            return new Promise((resolve, reject) => {
+                $.ajax({
+                    url: "/getBooks",
+                    success(res) {
+                        // 成功获取数据
+                        resolve(res); //异步操作是成功的
+                    },
+                    error(res) {
+                        //如果失败就执行error方法
+                        reject(res); //异步操作是失败的
+                    }
+                });
+            })
+
+            getBooks().then(res => {
+                // res表示请求成功的时候获取到的数据
+            }, error => {
+                console.log(error);
+            });
+
+            // 第二种处理错误的方式
+            getBooks().then(res => {
+                // 成功了
+            }).catch(res => {
+                // 这里也可以获取到错误信息
+            });
+
+            // 上面两种错误处理的方式 更加推荐第二种
+            // 第二种方式更强大的地方在于 不仅仅可以捕获到reject传递的参数
+            // 还可以捕获到成功的回调中发生的错误
+        }
+    </script>
+</body>
+
+</html>

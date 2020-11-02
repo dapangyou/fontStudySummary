@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 方法的调用方式
+        function Person() {
+            this.age = 100;
+        }
+        Person.prototype.run = function() {
+            console.log(this.age);
+        }
+        var p1 = new Person();
+        p1.run(); //通过new创建的新对象  通过构造函数创建出来的对象的this指向当前的对象 
+
+        var p2 = {
+            height: 180,
+
+        }
+    </script>
+</body>
+
+</html>

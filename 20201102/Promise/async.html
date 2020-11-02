@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function fn1() {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    console.log('你好');
+                    resolve();
+                }, 1000)
+            });
+        }
+
+        // f1().then(res => {
+        //     console.log("第二步");
+        // })n
+
+        (async function() {
+            await fn1();
+            console.log('第二步');
+            console.log('hello11111');
+
+            await fn1();
+            console.log('第3步');
+
+            await fn1();
+            console.log('第4步');
+        })();
+        console.log('hello');
+    </script>
+</body>
+
+</html>

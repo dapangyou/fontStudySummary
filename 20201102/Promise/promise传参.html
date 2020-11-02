@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getUser() {
+            return new Promise(resolve => {
+                $.get("/getUser", res => {
+                    resolve(res);
+                });
+            })
+        }
+        // res就是promise中的传参
+        getUser().then(res => {
+
+        });
+    </script>
+</body>
+
+</html>

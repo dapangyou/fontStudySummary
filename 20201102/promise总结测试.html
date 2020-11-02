@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function fn() {
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             console.log('你好');
+        //             resolve();
+        //         }, 1000);
+        //     });
+        // }
+
+        //一般调用
+        // fn().then(res => {
+        //     console.log("第一步操作");
+        //     fn().then(res => {
+        //         console.log("第2步操作");
+        //         fn().then(res => {
+        //             console.log("第3步操作");
+        //         })
+        //     })
+        // })
+
+        // fn().then(res => {
+        //     console.log("第一步操作");
+        //     return fn();
+        // }).then(res => {
+        //     console.log("第2步操作");
+        //     // console.log("完成");
+        // })
+
+
+        function f1() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    console.log('第1步操作.......');
+                    resolve();
+                }, 1000)
+            });
+        }
+
+        function f2() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    console.log('第2步操作.......');
+                    resolve();
+                }, 1000)
+            });
+        }
+
+        //链式调用promise
+        // f1().then(res => {
+        //     return f2();
+        // }).then(res => {
+        //     console.log("完成");
+        // })
+
+
+        function f3() {
+            return new Promise((resolve, reject) => {
+                $.ajax({
+                    url: "/getBooks",
+                    success(res) {
+                        // 成功的回调函数
+                        resolve(res);
+                    },
+                    error(error) {
+                        reject(error);
+                    }
+                })
+            });
+        }
+
+        // f3().then(res => {
+        //     console.log('请求成功.....');
+        // }, error => {
+        //     console.log("请求失败.....");
+        // });
+
+
+        function fn() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve('hello');
+                }, 1000)
+            });
+        }
+
+        (async function() {
+            const res1 = await fn();
+            console.log('第1次', res1);
+
+            const res2 = await fn();
+            console.log('第2次', res2);
+
+            const res3 = await fn();
+            console.log('第3次', res3);
+        })();
+    </script>
+</body>
+
+</html>

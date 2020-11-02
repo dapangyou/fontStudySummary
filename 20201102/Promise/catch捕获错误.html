@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function f1(name) {
+            return new Promise((reslove, reject) => {
+                setTimeout(() => {
+                    if (name == "a") {
+                        reslove("成功");
+                    } else {
+                        reject("失败");
+                    }
+                }, 1000);
+            });
+        }
+        // f1("b").then(res => {
+        //     console.log(res);
+        // }, error => {
+        //     console.log(error);
+        // });
+
+        f1("b").then(res => {
+            var a = 0;
+            a(); //代码发生了错误也可以被捕捉到
+            console.log(res);
+        }).catch(res => {
+            console.log(res);
+        });
+    </script>
+</body>
+
+</html>

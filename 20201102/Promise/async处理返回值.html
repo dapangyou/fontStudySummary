@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function q() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve("你好");
+                }, 1000);
+            });
+        }
+
+        (async function() {
+            const res1 = await q();
+            console.log("第1次", res1);
+
+            const res2 = await q();
+            console.log("第2次", res2);
+
+            const res3 = await q();
+            console.log("第3次", res3);
+        })();
+    </script>
+</body>
+
+</html>

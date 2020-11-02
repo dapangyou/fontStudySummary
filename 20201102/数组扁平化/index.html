@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 数组扁平化 -->
+    <!-- 数组的扁平化就是将二维数组转化成一维数组的过程 -->
+    <script>
+        let arr = [
+            ["zhangsan",22],['lisi',88]
+        ];
+        // console.log(arr.flat(2));
+
+        let newArr = arr.flatMap((item,index)=>{
+            item = item.filter(()=>{
+                return index == 0;
+            })
+            return item;
+            // console.log(item,index);
+        });
+        console.log(newArr);
+
+        let arr2 = [1,2,3,4,5];
+        arr2.fill('a',0,2);
+        console.log(arr2);
+    </script>
+</body>
+</html>

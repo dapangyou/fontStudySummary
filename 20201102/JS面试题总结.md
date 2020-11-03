@@ -1,13 +1,18 @@
 题目一:
 
 ```js
+
+
 let a = [],
   b = "0",
   c = 0;
 
 a[b] = "yintao";
 a[c] = "xiaowanzi";
-console.log(a[b]); // xiaowanzi
+console.log(a[b]); 
+
+
+// xiaowanzi
 ```
 
 <!-- 分析 -->
@@ -40,12 +45,15 @@ console.log(a[b]); //yintao
 题目三
 
 ```js
+
 let a = {},
   b = { n: "1" },
   c = { n: "2" };
 a[b] = "yintao";
 a[c] = "xiaowanzi";
-console.log(a[b]); //xiaowanzi
+console.log(a[b]); 
+
+//xiaowanzi
 ```
 
 <!-- 分析 -->

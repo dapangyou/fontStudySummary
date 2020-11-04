@@ -20,11 +20,11 @@ AMD默认只支持读取js
     main是入口文件
      <script data-main="main"></script>
     3.入口文件中可定义配置项
-    require.config = {
+    require.config ({
         paths: {
             jQuery: "jQuery-3.1.2",
             //配置path 可将一些容易发生改变迭代的文件重新配置
         },
         baseUrl: "/js/base"   //配置的基本路径是相对于入口文件为基础路径
-    }
+    })
 ```

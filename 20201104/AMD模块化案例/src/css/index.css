@@ -1,0 +1,29 @@
+#main {
+    display: flex;
+}
+
+
+/* 左侧菜单栏 */
+
+#main .aside {
+    width: 300px;
+    height: 600px;
+    background-color: pink;
+}
+
+
+/* 右侧内容区 */
+
+#main .content {
+    height: 600px;
+    background-color: lightblue;
+    flex: 1;
+}
+
+.aside-item {
+    list-style: none;
+    text-align: center;
+    padding: 30px 0px;
+    border-bottom: 1px solid gray;
+    cursor: pointer;
+}

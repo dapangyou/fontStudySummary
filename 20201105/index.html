@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            border: 2px solid #000;
+            background-color: pink;
+        }
+    </style>
+    <script>
+        let box = document.getElementById("box");
+        // 回流一次 浏览器可以批量渲染 等都执行完成了 再最后执行一次  渲染队列中 
+        box.style.width = '300px';
+        console.log('ttt'); //中间插入一句 会增加回流
+        box.style.height = '300px';
+
+        // 批量处理
+        box.style.cssText = "width: 200px;height: 300px"; //批量处理
+        box.className = 'aa';
+
+        // 缓存处理
+        box.style.width = box.clientWidth + 10 + 'px';
+        box.style.height = box.clientHeight + 10 + 'px'; //2次回流
+
+        // box.clientWidth  box.clientHeight  每次获取的时候都会是一次回流 可以设置变量存起来
+    </script>
+</head>
+
+<body>
+    <!-- 分离读写 -->
+
+    <div id="box"></div>
+</body>
+
+</html>

@@ -8,7 +8,7 @@ define([], function() {
             return salemanList;
         },
         add(name, age) {
-            salemanList.push(name, age);
+            salemanList.push({ name, age });
         },
         update() {},
         delete() {}

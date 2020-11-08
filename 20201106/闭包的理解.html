@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="nav">
+        <li>1111</li>
+        <li>2222</li>
+        <li>3333</li>
+        <li>44444</li>
+    </ul>
+    <script>
+        // 1.第一种方式得到li的索引号
+        // var lis = document.querySelector(".nav").querySelectorAll("li");
+        // for(var i=0;i<lis.length;i++) {
+        //     lis[i].index = i;
+        //     lis[i].onclick = function() {
+        //         console.log(this.index);
+        //     }
+        // }
+
+        // 2.利用闭包的方式获取li的索引号
+        // var lis = document.querySelector(".nav").querySelectorAll("li");
+        // for(var i=0;i<lis.length;i++) {
+        //     (function(i){
+        //         lis[i].onclick = function() {
+        //             console.log(i);
+        //         }
+        //     })(i);
+        // }
+
+        // 闭包在3秒钟之后 打印li元素中的内容
+        // var lis = document.querySelector(".nav").querySelectorAll("li");
+        // for(var i=0;i<lis.length;i++) {
+        //     (function(i) {
+        //         setTimeout(function() {
+        //             console.log(lis[i].innerHTML);
+        //         },3000);
+        //     })(i);
+        // }
+
+        // 计算打车的价格
+      
+                var car = (function() {
+                var start = 13;
+                var total = 0;
+                return {
+                    price: function(n) {
+                        if(n<=3) {
+                            total = start;                                 
+                        }else {
+                            total = start + (n-3) * 5;
+                        }
+                        return total;
+                    },
+                    yd:function(flag){
+                        return flag ? total +10 : total;
+                    }
+                }
+            })()
+        console.log(car.price(5));
+    </script>
+</body>
+</html>

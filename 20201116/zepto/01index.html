@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+    <!-- 模块化 可按需导入 -->
+    <script src="../assets/zepto.js"></script>
+    <script src="src/event.js"></script>
+    <script src="src/fx.js"></script>
+    <script src="src/fx_methods.js"></script>
+    <!-- 如果是想要很多种类的东西  那么如果每一次都要导入很多  这就很不好 -->
+    
+    <script>
+        $(function() {
+            $("div").animate({"marginLeft":200},1000);
+        })
+    </script>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

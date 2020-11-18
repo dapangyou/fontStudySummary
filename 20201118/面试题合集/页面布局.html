@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .layout {
+            margin-bottom: 150px;
+        }
+        
+        .layout article div {
+            height: 100px;
+        }
+        /* 方法一start */
+        /* .layout.float .left {
+            float: left;
+            width: 300px;
+            background-color: pink;
+        }
+        
+        .layout.float .right {
+            float: right;
+            width: 300px;
+            background-color: red;
+        }
+        
+        .layout.float .center {
+            background-color: green;
+        } */
+        /* 方法一end */
+        /* 方法二start */
+        /* .container {
+            position: relative;
+        }
+        
+        .left {
+            position: absolute;
+            left: 0;
+            width: 300px;
+            background-color: red;
+        }
+        
+        .right {
+            position: absolute;
+            right: 0;
+            width: 300px;
+            background-color: green;
+        }
+        
+        .center {
+            position: absolute;
+            background-color: yellow;
+            left: 300px;
+            right: 300px;
+        } */
+        /* 方法二end */
+        /* 方式三flexbox start */
+        /* .container {
+            display: flex;
+        }
+        
+        .container .left {
+            width: 300px;
+            background-color: red;
+        }
+        
+        .container .right {
+            width: 300px;
+            background-color: green;
+        }
+        
+        .center {
+            flex: 1;
+            background-color: blue;
+        } */
+        /* 方式三flexbox end */
+        /* 方式四table布局 start*/
+        /* .container {
+            width: 100%;
+            display: table;
+            height: 100px;
+        }
+        
+        div {
+            display: table-cell;
+        }
+        
+        .left {
+            width: 300px;
+            background-color: red;
+        }
+        
+        .center {
+            background-color: green;
+        }
+        
+        .right {
+            width: 300px;
+            background-color: pink;
+        } */
+        /* 方式四table布局 end */
+        /* 方式五grid布局 */
+        
+        .container {
+            display: grid;
+            width: 100%;
+            grid-template-rows: 100px;
+            grid-template-columns: 300px auto 300px;
+        }
+        
+        .left {
+            background-color: red;
+        }
+        
+        .center {
+            background-color: green;
+        }
+        
+        .right {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="layout float">
+        <article class="container">
+            <div class="left">111</div>
+            <div class="center">222</div>
+            <div class="right">333</div>
+        </article>
+    </section>
+
+
+</body>
+
+</html>

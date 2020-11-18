@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function fn() {
+            b = 13;
+            console.log(b);
+            // 如果在作用域链中查找不到b这个值  就会在window中设置这个属性b
+        }
+        fn();
+        console.log(b);
+    </script>
+</body>
+
+</html>

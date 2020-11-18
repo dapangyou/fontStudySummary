@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 给页面所有的div设置字体颜色为红色 -->
+    <div>123</div>
+    <div>456</div>
+    <div>789</div>
+    <div class="header">6666</div>
+    <script>
+        (function(global) {
+            function jQuery(selector) {
+                // 1.获取页面中的所有元素
+                // const elements = document.getElementsByTagName(selector);
+                // elements.css = () => {}
+                // 想要添加css方法 以上方法的缺点:
+                // 随着$()操作频次的增加 会产生无数个相同的css方法 造成内存浪费
+                // 2.把这个元素放到一个特定的对象中
+                return new F(selector);
+            }
+
+            // 为了解决以上问题  把DOM操作的方法放在原型上
+            // 这样看似可以正常访问 但是破坏了原生的对象结构 导致对象结构的污染 
+            // HTMLCollection.prototype.css = () => {
+            //     console.log("css方法");
+            // }
+
+            function F(selector) {
+                // 把DOM元素放到对象中
+                // const elements = document.getElementsByTagName(selector);
+                const elements = document.querySelectorAll(selector);
+                this.elements = elements;
+                // 为了操作方便 将这些获取到的DOM元素全部放在了对象自己身上 让自己变成一个数组一样
+                // 可以使用for循环遍历 【伪数组】
+
+                // 实现把这些所有DOM元素都添加到对象自己身上
+                for (let i = 0; i < elements.length; i++) {
+                    var ele = elements[i];
+                    this[i] = ele;
+                }
+                this.length = elements.length;
+            }
+            F.prototype.css = function(styleName, styleValue) {
+                for (let i = 0; i < this.elements.length; i++) {
+                    let element = this.elements[i];
+                    element.style[styleName] = styleValue;
+                }
+            };
+            window.$ = window.jQuery = jQuery;
+        })(window);
+        // $("div").css("color", "red");
+        $(".header").css("backgroundColor", "red");
+    </script>
+</body>
+
+</html>

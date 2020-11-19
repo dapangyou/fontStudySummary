@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <script src="../assets/zepto.js"></script>
+    <div></div>
+    <script>
+        $(function() {
+            $("div").on("tap",function() {
+                // 触摸的时候触发
+                console.log("触摸的时候触发事件.....");
+            });
+        })
+    </script>
+</body>
+</html>

@@ -20,4 +20,49 @@
     </script>
 </body>
 
+<body>
+    <script>
+        // foo();
+        // var foo;
+        // function foo() {
+        //     console.log(1);
+        // }
+
+        // foo = function() {
+        //     console.log(2);
+        // }
+
+        // function foo() {
+        //     var a=2;
+
+        //     function bar() {
+        //         console.log(a);
+        //     }
+
+        //     return bar;
+        // }
+
+        // var baz = foo();
+        // baz();
+
+        // for(var i=0;i<=5;i++) {
+        //     (function(){
+        //         setTimeout(function timer() {
+        //             console.log(i);
+        //         },i*1000);
+        //     })
+        // }
+
+        function foo() {
+            var a = 2;
+
+            function bar() {
+                console.log(a);
+            }
+            bar();
+        }
+        foo();
+    </script>
+</body>
+
 </html>

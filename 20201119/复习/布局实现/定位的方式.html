@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            position: relative;
+        }
+        
+        html * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        div {
+            height: 100px;
+        }
+        
+        .left {
+            position: absolute;
+            left: 0;
+            width: 300px;
+            background-color: pink;
+        }
+        
+        .right {
+            position: absolute;
+            right: 0;
+            width: 300px;
+            background-color: blue;
+        }
+        
+        .center {
+            position: absolute;
+            left: 300px;
+            right: 300px;
+            background-color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container">
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="center"></div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 100px 100px 100px;
+            grid-template-rows: 100px 100px 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--     
+        这个div想要采用grid布局的方式  所以这个div在grid布局中就可以理解为是容器 
+    -->
+    <!-- 容器中的最外层的元素是项目 因此 这个div就是其中的一个项目 里面的P元素不是项目  -->
+
+    <!-- 
+            关于属性:
+            grid布局属性定义在容器上面 容器属性 
+            grid定义在项目上面  项目属性 -->
+
+    <!-- 
+             display属性
+                grid: 容器采用网格布局   
+                默认情况下 容器元素都是块级元素 但是也可以设置成行内元素 
+                inline-grid: 指定div是行内元素 元素内部采用网格布局 
+                注意: 设置成网格布局之后 容器的子元素(项目) 
+                float display:inline-block display:table-cell vertical-align column-* 等设置都将会失效 -->
+
+    <!-- 设置
+             grid-template-columns: 属性用来定义每一列的列宽
+             grid-template-rows: 属性用来定义每一行的行高
+        -->
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
+</body>
+
+</html>

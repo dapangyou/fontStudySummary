@@ -15,9 +15,9 @@ server.on('request', (request, response) => {
         console.log(data.toString());
     });
     //响应头
-    response.writeHeader('a', 'a');
+    response.setHeader('a', 'a');
     // 响应行
-    response.writeHead(200);
+    response.writeHead(200, { 'content-type': 'text/html;charset=utf-8' });
     // 响应体
     response.write('床前明月光');
     response.write('疑是地上霜');

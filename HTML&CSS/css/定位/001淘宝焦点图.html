@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            list-style: none;
+        }
+        .tb_promo {
+            position: relative;
+            width: 520px;
+            height: 280px;
+            margin: 100px auto;
+            background-color: pink;
+        }
+        /* 重复的使用并集选择器 */
+        .pre,.next {
+            position: absolute;
+            top: 50%;
+            width: 21px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background: rgba(0, 0, 0, .3);
+        }
+        .pre {
+            left: 0;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+        .next {
+           /* 如果同时有left和right就以left为准 如果同时又top和bottom就以top为准 */
+            right: 0;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+        }
+        .proto_items {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            margin-left: -35px;
+            width: 70px;
+            height: 13px;
+            border-radius: 7px;
+            background: rgba(255, 255, 255, .3);
+        }
+        .proto_items li {
+            float: left;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #fff;
+            margin: 3px;
+        }
+        .proto_items .selected {
+            background-color: #ff5000;
+        }
+    </style>
+</head>
+<body>
+    <div class="tb_promo">
+        <img src="images/tb.jpg">
+        <div class="pre">&lt;</div>
+        <div class="next">&gt;</div>
+        <ul class="proto_items">
+            <li class="selected"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>

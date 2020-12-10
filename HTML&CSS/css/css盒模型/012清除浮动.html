@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clearfix:after{
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+        .clearfix {
+            *zoom: 1;
+        }
+        .box {
+            width: 500px;
+            overflow: hidden;
+        }
+        .first {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        .last {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: #000;
+        }
+        .footer {
+            width: 500px;
+            height: 150px;
+            background-color: #ccc;
+        }
+        /* 隔墙法:清除浮动 */
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="box clearfix">
+        <div class="first"></div>
+        <div class="last"></div>
+        <!-- 必须是块级元素 -->
+        <!-- <div class="clear"></div> -->
+    </div>
+    <div class="footer"></div>
+</body>
+</html>

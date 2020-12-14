@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /* transition: width 1s ease 1s, height 1s ease 1s; */
+            /* 多个属性都要变化 可以写all */
+            /* 过渡一般搭配hover使用 谁做过渡给谁加 */
+            transition: all 1s;
+        }
+        div:hover {
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

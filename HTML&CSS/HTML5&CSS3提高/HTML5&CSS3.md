@@ -60,4 +60,9 @@ nth-of-type
 
 ```js
 nth-child 和nth-of-type的区别
+    nth-child会把所有的盒子都排列序号
+    nth-child:是先把孩子选出来 然后再看和前面能不能匹配上 如果不能匹配上就不选择
+    nth-of-type: 会把指定元素的盒子排列序号
+    nth-of-type:
+        执行的时候首先看div指定的元素 之后再看 :nth-of-type 的第几个孩子
 ```

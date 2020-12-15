@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- v-bind：动态绑定属性 -->
+        <!-- 
+            v-bind的语法糖:
+                v-bind:src -----》:src v-bind:href -----》 :href 
+        -->
+        <img v-bind:src="imgUrl" alt="">
+        <a v-bind:href="linkUrl">百度一下</a>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                imgUrl: "https://img20.360buyimg.com/babel/s590x470_jfs/t1/134289/23/17651/53433/5fc20ea4E3f8b75e8/804bbfc400651d35.jpg.webp",
+                linkUrl: "http://www.baidu.com"
+            }
+        });
+    </script>
+</body>
+
+</html>

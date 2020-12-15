@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">{{message}}</div>
+    <script src="../vue.js"></script>
+    <script>
+        // 编程范式： 声明式编程
+        new Vue({
+            el: "#app", //用于要管理的元素
+            data: { // 定义数据
+                message: "你好啊!!!!"
+            }
+        });
+
+        //响应式?
+        // 什么是响应式? 
+        // 数据发生改变 页面的显示也随之改变 
+
+        // 元素js的做法(编程范式: 命令式编程)
+
+        // 1.创建div元素
+        // 2.定义一个变量message
+        // 3.将message变量放在div中显示
+
+
+        // {{message}} 插值表达式的执行过程：
+        // 从上到下执行 刚开始执行到{{message}}的时候 还是只会显示{{message}} 但是当加载到vue之后
+        // 就会把{{message}}这个东西交给vue去管理  
+        // vue会找到挂载点 并在data中找到该变量 并通过响应式显示出来
+    </script>
+</body>
+
+</html>

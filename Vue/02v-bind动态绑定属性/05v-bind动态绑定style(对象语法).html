@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 
+            对象中的值是{key:value}的形式
+            value会被当成是一个变量 会去data中找  找不到会报错的
+            这里是一个具体的值 所以要加上单引号 
+            经过vue的转化之后 会被解析去掉单引号
+            key可以不用加单引号 因为会自己加上  默认是字符串
+        -->
+        <h2 :style="{fontSize: '100px'}">{{message}}</h2>
+        <!-- 使用变量的方式 -->
+        <h2 :style="{fontSize: finalSize + 'px'}">{{message2}}</h2>
+        <!-- 使用方法的方式 -->
+        <h2 :style="getStyles()">{{message}}</h2>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                message: "Hello Vue.js",
+                message2: "Hello Vue.js2",
+                finalSize: 150
+            },
+            methods: {
+                getStyles() {
+                    return {fontSixe: this.finalSize + 'px'};
+                }
+            }
+        });
+    </script>
+</body>
+</html>

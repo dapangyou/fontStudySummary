@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div @click="handleClick1">大事件
+            <!-- 阻止事件向上冒泡 -->
+            <!-- 1.stop修饰符的使用 -->
+            <button @click.stop="handleClick2">小事件</button>
+        </div>
+
+        <!-- 2.prevent阻止事件的默认行为 -->
+        <br>
+        <form action="baidu.com">
+            <input type="submit" value="提交" @click.prevent="handleSubmit">
+        </form>
+
+        <br>
+        <!-- 3.监听某个键盘的键帽 -->
+        <input type="text" @keyup.enter="keyup">
+
+
+        <br>
+        <!-- 4.once只触发一次 -->
+        <button @click.once="handleOnce">once..</button>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {},
+            methods: {
+                handleClick1() {
+                    console.log('大事件11111......');
+                },
+                handleClick2() {
+                    console.log('小事件22222');
+                },
+                handleSubmit() {
+                    console.log('submit.....');
+                },
+                keyup() {
+                    console.log('keyup.....');
+                },
+                handleOnce() {
+                    // 只在第一次调用的时候触发
+                    console.log('once');
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

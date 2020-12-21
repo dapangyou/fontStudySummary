@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 1.事件调用的方法没有参数 -->
+        <button @click="handleClick1">按钮1</button>
+        <button @click="handleClick1()">按钮1-1</button>
+        <!--
+            2. 在事件定义时，写方法时省略了小括号 但是方法本身是需要一个参数的
+               这个时候 Vue会默认将浏览器产生的event事件对象作为参数
+               传入到方法
+        -->
+        <button @click="handleClick2">按钮2</button>
+        <!-- 3.方法定义时 我们需要event对象 同时又需要其他参数 -->
+        <button @click="handleClick3(123,$event)">按钮3</button>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+
+            },
+            methods: {
+                // 事件调用的方法没有参数
+                handleClick1(event) {
+                    console.log(event);
+                },
+                handleClick2() {},
+                handleClick3(arg,event) {
+                    console.log(arg,event);
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <cpn1></cpn1>
+        <cpn2></cpn2>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        // 1. 创建组件的构造器
+        Vue.component('cpn1', {
+            template: `
+                <div>
+                    <h2>标题111</h2>
+                    <p>内容11111</p>    
+                </div>
+            `
+        });
+
+
+        new Vue({
+            el: "#app",
+            data: {},
+            components: {
+                'cpn2': {
+                    template: `
+                        <div>
+                            <h2>标题2222</h2>
+                            <p>内容22222</p>    
+                        </div>
+                    `
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

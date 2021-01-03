@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 使用的isShow变量的时候都是在Vue实例作用域中去查找  
+             就是在自己的作用域中查找变量
+        -->
+        <!-- <cpn v-show="isShow"></cpn> -->
+       
+        <cpn>
+            <template slot-scope="slot">
+                <!-- <span v-for="item in slot.data">{{item}} -</span> -->
+                <span>{{slot.data.join(' - ')}}</span>
+            </template>
+        </cpn>
+    </div>
+
+    <template id="cpn">
+        <div>
+            <slot :data="languages">
+                <ul>
+                    <li v-for="item in languages">{{item}}</li>
+                </ul>
+            </slot>
+        </div>
+    </template>
+    <script src="../vue.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                isShow: false
+            },
+            components: {
+                cpn: {
+                    template: '#cpn',
+                    data() {
+                        return {
+                            languages: [ 'Java','JavaScript','C#','Python','go']
+                        }
+                    }
+                }
+            }
+            
+        });
+    </script>
+
+</body>
+</html>

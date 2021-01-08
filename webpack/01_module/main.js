@@ -1,4 +1,4 @@
-// import App from './App';
+import App from './App';
 import Vue from './vue';
 
 // import { num1, num2, add } from './App.js'
@@ -7,16 +7,12 @@ import Vue from './vue';
 // add(3, 5);
 
 // 整个模块加载
-import * as obj from './App.js';
-console.log(obj.num1);
-console.log(obj.num2);
-console.log(obj.add(3, 5));
-console.log(333);
-
+// import * as obj from './App.js';
+import './main.css';
 new Vue({
     el: "#app",
     components: {
-        App: obj.default
+        App
     },
     template: '<App/>'
 });

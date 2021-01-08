@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script src="../vue.js"></script>
+    <script type="text/javascript" src="./vue-router.js"></script>
+    <script type="text/javascript" src="./axios.js"></script>
+    <script>
+        // 路由的配置
+        Vue.use(VueRouter);
+
+        var User = {
+            data() {
+                return {
+                    user: '',
+                    error: null,
+                }
+            },
+            template: `
+                <div>
+                    <div v-if="error" class="error">
+                        {{error}}    
+                    </div>
+                    <div class="user" v-if="user">
+                        <h2>{{user}}</h2>
+                    </div>
+                </div>
+            `
+        }
+
+        var Test = {
+            template: `
+                <div>我是测试组件</div>
+            `
+        }
+
+        var router = new VueRouter({
+            routes: [{
+                path: "/user/:id",
+                name: "user",
+                component: User
+            }, {
+                path: "/test",
+                name: "test",
+                component: Test
+            }]
+        });
+        var App = {
+            template: `
+                <div>
+                    <router-link :to="{name: 'test'}">测试</router-link>
+                    <router-link :to="{name: 'user',params: {id: 1}}">我的用户1</router-link>
+                    <router-link :to="{name: 'user',params: {id: 2}}">我的用户2</router-link>
+                    <router-view></router-view>
+                </div>
+            `
+        }
+        Vue.prototype.$axios = axios;
+        new Vue({
+            el: "#app",
+            data: {},
+            components: {
+                App
+            },
+            template: '<App />',
+            router
+        });
+    </script>
+</body>
+
+</html>

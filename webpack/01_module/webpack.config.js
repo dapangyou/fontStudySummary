@@ -8,5 +8,21 @@ module.exports = {
         filename: "./build.js"
     },
     // 监听文件改动自动产出build.js
-    watch: true
+    // watch: true,
+    // 声明模块
+    module: {
+        loaders: [{
+                test: /\.css$/,
+                loader: 'style-loader!css-loader'
+            },
+            {
+                test: /\.(jpg|png|jpeg|gif|svg)$/,
+                loader: "url-loader?limit=40000"
+            },
+            {
+                test: /\.less$/,
+                loader: 'style-loader!css-loader!less-loader'
+            }
+        ]
+    }
 }

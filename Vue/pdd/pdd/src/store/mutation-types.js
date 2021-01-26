@@ -1,0 +1,1 @@
+export default Home_CASUAL = 'home_casual';

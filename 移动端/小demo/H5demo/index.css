@@ -1,0 +1,23 @@
+html {
+  font-size: 100px;
+}
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  background: red;
+}
+.mainBox {
+  margin: 0 auto;
+  max-width: 640px;
+  height: 100%;
+  background-color: pink;
+}
+.loadingBox {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+.loadingBox {
+  background-color: #000;
+}

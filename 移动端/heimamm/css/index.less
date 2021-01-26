@@ -1,0 +1,145 @@
+body {
+    min-width: 320px;
+    max-width: 750px;
+    height: 1200px;
+    margin: 0 auto;
+    background-color: #f2f4f7;
+}
+a {
+    text-decoration: none;
+    color: #707070;
+}
+// 约束当屏幕大于750px的时候 html的字体大小就不变化了
+@media screen and (min-width: 750px) {
+    html {
+        font-size: 37.5px!important;
+    }
+}
+.wrap {
+    background-color: #fff;
+    padding-bottom: 1.146667rem;
+}
+.header {
+    height: 2.133333rem;
+    border-bottom: 1px solid #eaeaea;
+    text-align: center;
+    line-height: 2.133333rem;
+    font-size: .933333rem;
+    color: #1c1c1c;
+}
+.nav {
+    display: flex;
+    // 显示不下就换行
+    flex-wrap: wrap;
+    padding: 1.2rem 0 1.6rem 0;
+    .item {
+        width: 33.33%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+            width: 3.706667rem;
+            height: 3.706667rem;
+        }
+        span {
+            font-size: .666667rem;
+            color: #707070;
+        }
+         // 选择前面三个
+        &:nth-child(-n + 3) {
+            margin-bottom: 1.653333rem;
+        }
+    }
+    
+}
+
+.go {
+    margin: 0 .266667rem 0 .48rem;
+}
+
+.content {
+    margin-top: .266667rem;
+    padding: 1.066667rem .586667rem ;
+    background-color: #fff;
+    .con-hd {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 1.013333rem;
+        margin-bottom: .906667rem;
+        h4 {
+            font-size: .746667rem;
+            color: #333;
+            .icon {
+                display: inline-block;
+                width: 1.013333rem;
+                height: 1.013333rem;
+                vertical-align: middle;
+            }
+            
+        }
+        a {
+            font-size: .586667rem;
+            color: #999;
+        }
+    }
+}
+.get_job_focus {
+    position: relative;
+    .swiper-container {
+        // width: 100%;
+        height: 100%;
+        width: 14.4rem;
+    
+    }
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        flex-direction: column;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        transition: 300ms;
+        // 其余的兄弟是0.8
+        transform: scale(0.8);
+        opacity: 0.4;
+        a {
+            width: 9.013333rem;
+            height: 10.026667rem;
+            img {
+                width: 9.013333rem;
+                // width: 100%;
+                // height: 100%;
+                height: 10.026667rem;
+            }
+        }
+        p {
+            width: 9.013333rem;
+            font-size: 0.666667rem;
+            margin-top: 0.64rem;
+            color: #333;
+          }
+      }
+      
+      .swiper-slide-active,.swiper-slide-duplicate-active{
+        transform: scale(1);
+        z-index: 999;
+        opacity: 1;
+      }
+    
+}
+
+
+
+

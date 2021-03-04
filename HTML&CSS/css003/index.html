@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 单行文本出现省略号 */
+        /* div {
+            width: 100px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-wrap: break-all;
+        } */
+
+        /* 多行文字出现省略号 */
+        .more {
+            width: 300px;
+            height: 200px;
+            display: -webkit-box;
+            /*重点，不能用block等其他，将对象作为弹性伸缩盒子模型显示*/
+            -webkit-box-orient: vertical;
+            /*从上到下垂直排列子元素（设置伸缩盒子的子元素排列方式）*/
+            -webkit-line-clamp: 3;
+            /*行数，超出三行隐藏且多余的用省略号表示...*/
+            line-clamp: 3;
+            word-break: break-all;
+            overflow: hidden;
+            max-width: 100%;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="more">
+        124444444444444444444444444444444444444444444444444444444444444444444444444444444444444444490000000
+    </div>
+</body>
+
+</html>
